@@ -1,0 +1,21 @@
+Bu .txt dosyasında program boyunca aldığım hataları ve çözümleri gireceğim.
+
+Hata 1: redux.js:158 Uncaught Error: Expected the root reducer to be a function. Instead, received: ''
+
+Çözüm: Reducers dosyasının içindeki index.js'e en başta fake bir reducer oluşturman gerekli. Redux, reducersız başlamıyor. 
+Örn : import { combineReducers } from "redux";
+
+export default combineReducers({ 
+    test: () => 'test reducer' 
+  }); 
+
+  Hata 2 : Warning: validateDOMNesting(...): <a> cannot appear as a descendant of <a>.
+  Çözüm :  <div> kullanmam gereken yerde <a> etiketini kullandım. 
+
+  Hata 3 : target='_blank' hatasını aldım 
+  Çözüm :  rel='noreferrer' şeklinde bir ekleme yaparak düzeltebiliriz. Eski tarayacılarda güvenlik problemi çıkarmaması için .
+
+  Bonus :  Mail butonuna tıkladığı zaman direkt mail uygulamasının açılmasını istiyorsak mailto:xxxxx@gmail.com yazmalıyız.
+
+  Bonus :  Bootstrap kullanırken aynı divler içerisinde başka Bootstrap sürümlerinden gelme <div>leri import ederek çalışabiliriz. Biraz sıkıntı yaratıyor, mecbur kalmadıkça yayılmamalı ve index.html dosyasına .js ve .css dosya linkleri import edilmeli. 
+  
